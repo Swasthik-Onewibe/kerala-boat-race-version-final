@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export CSV Data</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/exportpage.css') }}"
+    />
+</head>
+<body>
+    <div class="container">
+        <h2>Export CSV Data</h2>
+        
+        <div class="button-group">
+            <button id="downloadBtn" class="download-btn">
+                Download CSV
+            </button>
+            <button id="deleteBtn" class="delete-btn">
+                Delete CSV
+            </button>
+        </div>
+        
+        <div class="back-button-group">
+            <button class="back-btn" onclick="goHome()">← Back to Home</button>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content">
+            <h3>⚠️ No CSV File Found</h3>
+            <p>There is no CSV file available. Please upload a CSV file first.</p>
+            <button class="popup-close" onclick="closePopupAndRedirect()">Close</button>
+        </div>
+    </div>
+
+    <script src="/static/javaScript/Exportpage.js"></script>
+</body>
+</html>

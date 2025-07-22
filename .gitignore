@@ -1,0 +1,13 @@
+# Compiled Python files
+__pycache__/
+
+# Archives
+data.csv
+
+# Python virtual environments
+.env/
+vellam_kali_venv/
+
+# packages
+package-lock.json
+package.json

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone Number Collection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/static/lib/socket.io.js"></script>
+    <script src="/static/javaScript/socketClient.js"></script>
+    <script src="/static/javaScript/login.js"></script>
+  </head>
+
+  <body>
+    <div class="login-container">
+      <h2>Enter Your Details</h2>
+      <form id="loginForm" onsubmit="return validateForm()">
+        <div class="player-section">
+          <h3>Player 1</h3>
+          <input type="text" name="player1_name" placeholder="Player 1 Name" />
+          <input
+            type="tel"
+            name="player1_phone"
+            placeholder="Player 1 Phone"
+            pattern="[0-9]{10}"
+          />
+        </div>
+
+        <div class="player-section">
+          <h3>Player 2</h3>
+          <input type="text" name="player2_name" placeholder="Player 2 Name" />
+          <input
+            type="tel"
+            name="player2_phone"
+            placeholder="Player 2 Phone"
+            pattern="[0-9]{10}"
+          />
+        </div>
+
+
+        <div class="button-container">
+          <input type="checkbox" id="skipLogin" name="skip" value="true" />
+          <label for="skipLogin">Skip</label>
+          <button type="submit">Start Game</button>
+          <button type="button" onclick="resetForm()">Reset Form</button>
+          <button type="button" onclick="restartGame()" class="restart-btn">
+            Restart Game
+          </button>
+        </div>
+      </form>
+
+      <div class="status-container">
+        <p id="statusMessage">Ready to start game...</p>
+      </div>
+    </div>
+    <div id="customAlert" class="custom-alert">
+      <div class="custom-alert-content">
+        <p id="customAlertMessage">This is a custom alert message.</p>
+        <button onclick="closeCustomAlert()">OK</button>
+      </div>
+    </div>
+  </body>
+</html>

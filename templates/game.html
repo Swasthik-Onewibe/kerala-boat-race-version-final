@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Snake Boat Race Game</title>
+    <link rel="stylesheet" href="/static/css/game_style.css">
+</head>
+
+<body>
+    <div id="gameContainer">
+
+        <!-- Countdown Overlay -->
+        <div id="countdownOverlay">
+            <div id="countdownNumber">3</div>
+        </div>
+
+        <!-- Game UI -->
+        <div id="distanceDisplay">
+            <div class="distance-item">
+                <span class="player-name" id="distance1">Player 1: 0m</span>
+            </div>
+            <div class="distance-item">
+                <span class="player-name" id="distance2">Player 2: 0m</span>
+            </div>
+        </div>
+
+        {% if logo_url %}
+        <div id="logoContainer">
+            <img id="companyLogo" src="{{ logo_url }}" alt="Company Logo" />
+        </div>
+        {% endif %}
+
+        <!-- Winner Screen -->
+        <div id="winner" class="">
+            <div id="winnerText">🏆 Player 2 (Green Boat) Wins! 🏆</div>
+        </div>
+
+        <!-- External Libraries -->
+        <script type="module" src="/static/lib/three.module.js"></script>
+        <script type="module" src="/static/lib/GLTFLoader.js"></script>
+        <script type="module" src="/static/lib/socket.io.js"></script>
+
+        <!-- Game Scripts (order matters for dependencies) -->
+        <script type="module" src="/static/javaScript/config.js"></script>
+        <script type="module" src="/static/javaScript/controls.js"></script>
+        <script type="module" src="/static/javaScript/environment.js"></script>
+        <script type="module" src="/static/javaScript/boats.js"></script>
+        <script type="module" src="/static/javaScript/UIManager.js"></script>
+        <script type="module" src="/static/javaScript/AudioManager.js"></script>
+        <script type="module" src="/static/javaScript/socketClient.js"></script>
+        <script type="module" src="/static/javaScript/GameManager.js"></script>
+
+        <script>
+            window.logoUrl = "{{ logo_url | safe }}";
+        </script>
+</body>
+
+</html>

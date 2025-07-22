@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}" />
+    <script src="{{ url_for('static', filename='javaScript/admin.js') }}"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Game Admin Panel</h1>
+            <p>Upload your company logo and background music to customize your game</p>
+        </div>
+
+        <div class="admin-grid">
+            <!-- Logo Upload Section -->
+            <div class="upload-section">
+                <h2 class="section-title">🏢 Company Logo</h2>
+                <div class="upload-area" id="logoUpload">
+                    <div class="upload-icon">📁</div>
+                    <div class="upload-text">Drag & drop your logo here</div>
+                    <div class="upload-subtext">or click to browse (PNG, JPG, GIF - Max 5MB)</div>
+                    <input type="file" class="file-input" id="logoInput" accept="image/*">
+                </div>
+                <div class="preview-area" id="logoPreview">
+                    <img class="logo-preview" id="logoImg" alt="Logo Preview">
+                    <div class="file-info" id="logoInfo"></div>
+                    <button class="remove-btn" onclick="removeLogo()">Remove Logo</button>
+                </div>
+            </div>
+
+            <!-- Music Upload Section -->
+            <div class="upload-section">
+                <h2 class="section-title">🎵 Background Music</h2>
+                <div class="upload-area" id="musicUpload">
+                    <div class="upload-icon">🎵</div>
+                    <div class="upload-text">Drag & drop your music here</div>
+                    <div class="upload-subtext">or click to browse (MP3, WAV, OGG - Max 10MB)</div>
+                    <input type="file" class="file-input" id="musicInput" accept="audio/*">
+                </div>
+                <div class="preview-area" id="musicPreview">
+                    <audio class="music-preview" id="musicPlayer" controls></audio>
+                    <div class="file-info" id="musicInfo"></div>
+                    <button class="remove-btn" onclick="removeMusic()">Remove Music</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="saveSettings()">📀 Save Settings</button>
+            <button class="btn btn-secondary" onclick="resetAll()">🔄 Reset All</button>
+        </div>
+
+        <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
