@@ -24,18 +24,19 @@ This is a 3D multiplayer game inspired by Kerala's traditional boat race. The pr
 
 #### 🍎 For macOS
 
-```bash
+
+
 brew install git-lfs
 
-```bash
+
 git lfs install
 
 
 #### 🐧 For Linux (Debian/Ubuntu)
 
-```bash
+
 sudo apt update
-```bash
+
 sudo apt install git-lfs
-```bash
+
 git lfs install
